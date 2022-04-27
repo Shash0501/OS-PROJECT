@@ -2,6 +2,7 @@
 
 This OS-Simulator project is built by a team of 10 students from NITK, Surathkal, in partial fulfilment of the Operating Systems course (CS252) offered by the CSE Department of the institute.
 
+### Simulator deployed on https://os-sim-251-260.netlify.app/
 ### Team Members
 ```bash
 Samyak Sanjay Sand              201CS251
