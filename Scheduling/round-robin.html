@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
+</head>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -24,36 +26,36 @@
           <div class="btn-group">
             <button type="button" class="btn btn-outline-warning btn-lg btn-radius dropdown-toggle" style="color: white; background-color: black;" data-bs-toggle="dropdown">Classical Problems</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">First Come First Serve</a></li>
-              <li><a class="dropdown-item" href="#">Shortest Job First</a></li>
-              <li><a class="dropdown-item" href="#">Shortest Remaining Time First</a></li>
-              <li><a class="dropdown-item" href="#">Longest Job First</a></li>
-              <li><a class="dropdown-item" href="#">Largest Remaining Time First</a></li>
-              <li><a class="dropdown-item" href="#">Priority Preemptive</a></li>
-              <li><a class="dropdown-item" href="#">Priority Non Preemptive</a></li>
-              <li><a class="dropdown-item" href="#">Compare Algorithms</a></li>
-              <li><a class="dropdown-item" href="#">Round Robin</a></li>
-              <li><a class="dropdown-item" href="#">Highest Response Ratio Next</a></li>
+              <li><a class="dropdown-item" href="fcfs.html">First Come First Serve</a></li>
+              <li><a class="dropdown-item" href="SJF Non-Preemptive.html">Shortest Job First</a></li>
+              <li><a class="dropdown-item" href="srtf.html">Shortest Remaining Time First</a></li>
+              <li><a class="dropdown-item" href="longest_job_first.html">Longest Job First</a></li>
+              <li><a class="dropdown-item" href="Largest Remaining Time first.html">Largest Remaining Time First</a></li>
+              <li><a class="dropdown-item" href="Priority Preemptive.html">Priority Preemptive</a></li>
+              <li><a class="dropdown-item" href="prioritynonpre.html">Priority Non Preemptive</a></li>
+              <li><a class="dropdown-item" href="compare.html">Compare Algorithms</a></li>
+              <li><a class="dropdown-item" href="round-robin.html">Round Robin</a></li>
+              <li><a class="dropdown-item" href="hrrn.html">Highest Response Ratio Next</a></li>
 
             </ul>
           </div>
       </li>
         <li class="nav-item">
           <div class="btn-group">
-          <a class="btn btn-outline-warning btn-lg btn-radius" style="color: white; background-color: black;" href="javascript:void(0) ">Team Members</a>
+          <a class="btn btn-outline-warning btn-lg btn-radius" style="color: white; background-color: black;" href="../index.html#contact ">Team Members</a>
         </li>
         <li class="nav-item">
           <div class="btn-group">
             <button type="button" class="btn btn-outline-warning btn-lg btn-radius dropdown-toggle" style="color: white; background-color: black;" data-bs-toggle="dropdown">Concepts</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Process Scheduling</a></li>
-              <li><a class="dropdown-item" href="#">Deadlocks</a></li>
-              <li><a class="dropdown-item" href="#">Disk Scheduling</a></li>
-              <li><a class="dropdown-item" href="#">Longest Job First</a></li>
-              <li><a class="dropdown-item" href="#">Process Synchronization</a></li>
-              <li><a class="dropdown-item" href="#">MFT and MVT</a></li>
-              <li><a class="dropdown-item" href="#">Non Contiguous Memory Management</a></li>
-              <li><a class="dropdown-item" href="#">File Allocation</a></li>
+              <li><a class="dropdown-item" href="index.html">Process Scheduling</a></li>
+              <li><a class="dropdown-item" href="../Deadlock/index.html">Deadlocks</a></li>
+              <li><a class="dropdown-item" href="../disk/disk_scheduling.html">Disk Scheduling</a></li>
+              <li><a class="dropdown-item" href="../Server-Client-Comm/cli_ser.html">Client-Server Communication</a></li>
+              <li><a class="dropdown-item" href="../Syncronization/index.html">Process Synchronization</a></li>
+              <li><a class="dropdown-item" href="../MFT/index.html">MFT and MVT</a></li>
+              <li><a class="dropdown-item" href="../OS-final/index.html">Non Contiguous Memory Management</a></li>
+              <li><a class="dropdown-item" href="../file-allocation/index_page.html">File Allocation</a></li>
 
             </ul>
           </div>
@@ -68,7 +70,6 @@
   </div>
   </nav>
 <br><br><br>
-
 <script>
   /*FCFS SCHEDULING*/
 
@@ -95,7 +96,7 @@ $(document).ready(function(){
   function DisplayList(){
     var table = document.getElementById("ept");
     console.log(stuff[stuff.length-1].no);
-    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td></tr>");
+    $('#ept').append("<tr><td>"+stuff[stuff.length-1].no+"</td><td>"+stuff[stuff.length-1].at+"</td><td>"+stuff[stuff.length-1].bt1+"</td><td>"+stuff[stuff.length-1].io+"</td><td>"+stuff[stuff.length-1].bt2+"</td></tr>");
   }
   function AddtoList(){
     var arrivalTime=parseInt(document.getElementById("at1").value);
@@ -179,7 +180,7 @@ $(document).ready(function(){
       console.log(Q);
         if(Q.length>0)
           var index=Dequeue();
-        else
+        else 
         {
           index=null;
           if(temp!=index)
@@ -200,7 +201,7 @@ $(document).ready(function(){
             if(stuff[j].at<=time && stuff[j].finish==0 && stuff[j].check==0 && Q.indexOf(j)==-1){
               Enqueue(j);
             }
-
+           
           }
         }
         console.log(index);
@@ -247,7 +248,7 @@ $(document).ready(function(){
             if(stuff[j].at<=time && stuff[j].finish==0 && stuff[j].check==0 && Q.indexOf(j)==-1){
               Enqueue(j);
             }
-
+            
           }
         }
         else if(index!=null && stuff[index].rt[stuff[index].point]>tq && stuff[index].finish==0 && stuff[index].check!=1)
@@ -278,7 +279,7 @@ $(document).ready(function(){
           }
             Enqueue(index);
             console.log(Q);
-
+            
           }
       }
     sequence.push({start:time,n:-1});
@@ -304,7 +305,7 @@ $(document).ready(function(){
       }
     }
     cpu_efficiency=(time-sum_null)/time*100;
-
+  
 }
 function Enqueue(i){
   Q.push(i);
@@ -357,97 +358,100 @@ function Dequeue(){
 });
 </script>
 <style>
-body{
-  text-align: center;
-  
-  
-  
-  
-}
-
-th {
-    background-color: #9eb39e;
-    color: rgb(5, 5, 5);
-    border-radius: 10px;
+  body{
+    text-align: center;
     
+    
+    
+    
+  }
+  
+  th {
+      background-color: #9eb39e;
+      color: rgb(5, 5, 5);
+      border-radius: 10px;
+      
+  
+  }
+  #b{
+    font-size:2 em;
+  }
+  h1{
+    font-style: italic;
+  }
+  .btn{
+    border-radius:12px;
+    background-color: #8b938b;
+    color:white;
+    border-radius: 20px;
+  }
+  p{
+    font-size: 3 em;
+    font-style: italic;
+  }
+  #ptab{
+    display:none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #outer-div{
+    margin: auto;
+    width: 802px;
+    height: 100px;
+    position: relative;
+    border: 1px solid black;
+  }
+  
+  .block{
+    position: relative;
+    display: none;
+    border-right: 1px solid black;
+    float: left;
+    text-align: center;
+    background-color: rgba(112, 128, 144, 0.44);
+    height: 98px;
+  }
+  
+  .bottom{
+   /* position: absolute;*/
+    width: 100%;
+    margin-top: 100px;
+    text-align: right;
+    margin-bottom: 1;
+  }
+  #ep{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(170, 179, 176);
+  }
+  h1{
+    font-weight:bold;
+  }
+  </style>
 
-}
-#b{
-  font-size:2 em;
-}
-h1{
-  font-style: italic;
-}
-.btn{
-  border-radius:12px;
-  background-color: #8b938b;
-  color:white;
-  border-radius: 20px;
-}
-p{
-  font-size: 3 em;
-  font-style: italic;
-}
-#ptab{
-  display:none;
-  margin-left: auto;
-  margin-right:  auto;
-}
-
-#outer-div{
-  margin: auto;
-  width: 802px;
-  height: 100px;
-  position: relative;
-  border: 1px solid black;
-}
-
-.block{
-  position: relative;
-  display: none;
-  border-right: 1px solid black;
-  float: left;
-  text-align: center;
-  background-color: rgba(112, 128, 144, 0.44);
-  height: 98px;
-}
-
-.bottom{
- /* position: absolute;*/
-  width: 100%;
-  margin-top: 100px;
-  text-align: right;
-  margin-bottom: 1;
-}
-#ep{
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgb(170, 179, 176);
-}
-h1{
-  font-weight:bold;
-}
-</style>
-<h1>
-  Round Robin algorithm for process Scheduling
-
-</h1>
-<h2>
-  Simulation
-</h2>
-<p>
-  We suggest our users to go through theory related to the topic before running the simulation .
-  <br> to read the theory , click on the button below .
-</p>
-
-<button  id="next" class="btn" class="active"> <a href="roundrobindetails.html"> know more </a></button>
-<br>
-<br>
 <body>
 
+  <h1>
+    Round Robin algorithm for process Scheduling
+  
+  </h1>
   <h2>
-    Round-Robin Scheduling
+    Simulation
   </h2>
+  <p>
+    We suggest our users to go through theory related to the topic before running the simulation .
+    <br> to read the theory , click on the button below .
+  </p>
+  
+  <button  id="next" class="btn" class="active"> <a href="roundrobindetails.html"> know more </a></button>
+  <br>
+  <br>
+
+
+  <h1>
+    Round-Robin Scheduling
+  </h1>
   <br>
   <h2>
     Gantt Chart
@@ -459,26 +463,21 @@ h1{
       <thead>
       <th>PNO.</th>
       <th>Arrival Time </th>
-      <th>Burst Time</th>
-<!--       <th>IO </th> -->
-<!--       <th>Burst Time 2 </th> -->
+      <th>Burst Time 1 </th>
+      <th>IO </th>
+      <th>Burst Time 2 </th>
     </tr>
     <tbody id="ept">
     </tbody>
   </thead>
 </table>
   </div>
-  <input type='number' min="0" id='at1' placeholder="arrival time"></input>
-  <input type='number' min="0" id='bt1' placeholder="burst time"></input>
+  <input type='number' id='at1' placeholder="arrival time"></input>
+  <input type='number' id='bt1' placeholder="burst time 1"></input>
+  <button id="add" class="btn" onclick="AddtoList()">Add</button>
   <br>
-  <br>
-  <button id="add" class="btn" onclick="AddtoList()">Add Process</button>
-  <br>
-  <br>
-  <input type='number' min="0" id="tq" placeholder="Time quantum"></input>
-  <br>
-  <br>
-  <button id="start" class="btn">Start Simulation</button>
+  <input type='number' id="tq" placeholder="Time quantum"></input> 
+  <button id="start" class="btn">Start</button>
   <br>
   <br>
   <div id="outer-div">
@@ -491,8 +490,8 @@ h1{
   <th>PNO.</th>
   <th>Arrival time</th>
   <th>Burst time1</th>
-<!--   <th>I/O time</th> -->
-<!--   <th>Burst time2</th> -->
+  <th>I/O time</th>
+  <th>Burst time2</th>
   <th>Waiting time</th>
   <th>Turn around time</th>
   </tr>
